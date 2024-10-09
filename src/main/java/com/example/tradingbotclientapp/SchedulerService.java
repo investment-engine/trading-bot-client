@@ -39,7 +39,7 @@ public class SchedulerService {
     private String apiUrl;
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
 
-    @Scheduled(cron = "0 0 0/4 * * ?") // Опрос каждые 4 часа
+    @Scheduled(cron = "0 0 0/4 * * ?", zone = "UTC") // Опрос каждые 4 часа
     public void checkAndTrade() throws JsonProcessingException {
         List<TradeLog> tradeLogs = Arrays.asList(Optional.ofNullable(restTemplate.getForObject(apiUrl, TradeLog[].class)).orElseGet(() -> new TradeLog[0]));
         Map<String, TradeLog> tradeLogMap = tradeLogs.stream()
