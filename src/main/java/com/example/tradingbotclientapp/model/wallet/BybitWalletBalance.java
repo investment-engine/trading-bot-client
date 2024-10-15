@@ -3,10 +3,12 @@ package com.example.tradingbotclientapp.model.wallet;
 import com.example.tradingbotclientapp.model.HuobiSymbol;
 import lombok.Data;
 
+import java.util.Objects;
 import java.util.Optional;
 
 @Data
 public class BybitWalletBalance {
+
     private int retCode;
     private String retMsg;
     private BybitWalletResult result;
@@ -14,13 +16,14 @@ public class BybitWalletBalance {
     private long time;
 
     public Optional<BybitWalletBalanceCoin> getCoinEquity(HuobiSymbol symbol) {
-        return result
-                .getList()
-                .get(0)
-                .getCoin()
-                .stream()
-                .filter(i -> i.getCoin().equals(symbol.toString()))
-                .findFirst();
+        return Optional.ofNullable(result.getList())
+                .flatMap(wallets -> wallets.stream().findFirst())
+                .flatMap(wallet -> Optional.ofNullable(wallet.getCoin())
+                        .flatMap(coins -> coins.stream()
+                                .filter(balanceCoin -> Objects.equals(balanceCoin.getCoin(), symbol.toString()))
+                                .findFirst()
+                        )
+                );
     }
 
 

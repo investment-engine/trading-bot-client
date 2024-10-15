@@ -1,0 +1,13 @@
+spring:
+  application:
+   name: trading-bot-client-app
+
+bybit:
+  api:
+    url: ${BYBIT_API_URL:https://api.bybit.com}
+  token: ${BYBIT_TOKEN:ЗАМЕНИТЬ_НА_СВОЕ_ЗНАЧЕНИЕ}
+  secretKey: ${BYBIT_SECRET_KEY:ЗАМЕНИТЬ_НА_СВОЕ_ЗНАЧЕНИЕ}
+  balanceFile: ${BALANCE_FILE_PATH:.workspace/balance.properties}
+
+api:
+  url: ${SIGNAL_API_URL:http://185.125.218.17:8080/api/trade-logs/open}
