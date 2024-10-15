@@ -6,7 +6,7 @@ public enum HuobiSymbol {
     BTC("btcusdt", "BTCUSDT", 6),
     ETH("ethusdt", "ETHUSDT", 4),
     TON("tonusdt", "TONUSDT", 2),
-    CORE("coreusdt", "COREUSDT", 4),
+    CORE("coreusdt", "COREUSDT", 2),
     SHIB("shibusdt", "SHIBUSDT", 0),
     FLOKI("flokiusdt", "FLOKIUSDT", 0),
     BONK("bonkusdt", "BONKUSDT", 0),
