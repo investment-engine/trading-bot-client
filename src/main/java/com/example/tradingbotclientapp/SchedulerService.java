@@ -60,7 +60,7 @@ public class SchedulerService {
                     }
                 }
             } else {
-                LocalDateTime openTimestamp = LocalDateTime.parse(tradeLog.getOpenTimestamp().toString(), formatter);
+                LocalDateTime openTimestamp = tradeLog.getOpenTimestamp().toLocalDateTime();
                 LocalDateTime currentTimestamp = LocalDateTime.now(ZoneOffset.UTC);
                 Duration duration = Duration.between(openTimestamp, currentTimestamp);
                 long durationH = duration.toHours();
