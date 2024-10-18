@@ -5,7 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class TradingBotClientAppApplication {
+
     public static void main(String[] args) {
         SpringApplication.run(TradingBotClientAppApplication.class, args);
     }
+
 }

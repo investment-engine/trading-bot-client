@@ -2,37 +2,33 @@ package com.example.tradingbotclientapp.model;
 
 import lombok.Getter;
 
+@Getter
 public enum HuobiSymbol {
-    BTC("btcusdt", "BTCUSDT", 6),
-    ETH("ethusdt", "ETHUSDT", 4),
-    TON("tonusdt", "TONUSDT", 2),
-    CORE("coreusdt", "COREUSDT", 2),
-    SHIB("shibusdt", "SHIBUSDT", 0),
-    FLOKI("flokiusdt", "FLOKIUSDT", 0),
-    BONK("bonkusdt", "BONKUSDT", 0),
-    WIF("wifusdt", "WIFUSDT", 0),
-    PEPE("pepeusdt", "PEPEUSDT", 0),
-    USDT("usdt", "usdt", 2);
+    BTC("BTCUSDT", 6),
+    ETH("ETHUSDT", 4),
+    TON("TONUSDT", 2),
+    CORE("COREUSDT", 2),
+    SHIB("SHIBUSDT", 0),
+    FLOKI("FLOKIUSDT", 0),
+    BONK("BONKUSDT", 0),
+    WIF("WIFUSDT", 0),
+    PEPE("PEPEUSDT", 0),
+    USDT("usdt", 2);
 
-    @Getter
-    private String label;
-    @Getter
-    private String description;
-    @Getter
-    private int scale;
+    private final String usdtPair;
+    private final int scale;
 
-    HuobiSymbol(String label, String description, int scale) {
-        this.label = label;
-        this.description = description;
+    HuobiSymbol(String usdtPair, int scale) {
+        this.usdtPair = usdtPair;
         this.scale = scale;
     }
 
-    public static HuobiSymbol valueOfLabel(String label) {
+    public static HuobiSymbol findByUsdtPair(String label) {
         for (HuobiSymbol symbol : values()) {
-            if (symbol.getLabel().equals(label)) {
+            if (symbol.getUsdtPair().equalsIgnoreCase(label)) {
                 return symbol;
             }
         }
-        throw new IllegalArgumentException("No enum constant with label: " + label);
+        return null;
     }
 }
