@@ -14,6 +14,10 @@ public class BybitWalletBalance {
     private long time;
 
     public Optional<BybitWalletBalanceCoin> getCoinEquity(HuobiSymbol symbol) {
+        if (result == null || result.getList() == null || result.getList().isEmpty()) {
+            return Optional.empty();
+        }
+
         return result
                 .getList()
                 .get(0)

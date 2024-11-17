@@ -12,6 +12,8 @@ public enum HuobiSymbol {
     BONK("bonkusdt", "BONKUSDT", 0),
     WIF("wifusdt", "WIFUSDT", 0),
     PEPE("pepeusdt", "PEPEUSDT", 0),
+    DOGE("dogeusdt", "DOGEUSDT", 4),
+    SOL("solusdt", "SOLUSDT", 2),
     USDT("usdt", "usdt", 2);
 
     @Getter
