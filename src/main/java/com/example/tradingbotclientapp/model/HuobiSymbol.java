@@ -13,7 +13,8 @@ public enum HuobiSymbol {
     WIF("wifusdt", "WIFUSDT", 0),
     PEPE("pepeusdt", "PEPEUSDT", 0),
     DOGE("dogeusdt", "DOGEUSDT", 4),
-    SOL("solusdt", "SOLUSDT", 2),
+    SOL("solusdt", "SOLUSDT", 3),
+    GLMR("glmrusdt", "GLMR/USDT", 2),
     USDT("usdt", "usdt", 2);
 
     @Getter
